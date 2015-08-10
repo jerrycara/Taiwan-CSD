@@ -2,11 +2,8 @@
 using NUnit;
 using NUnit.Framework;
 using System.Collections.Generic;
-<<<<<<< HEAD
 using System.Linq;
-=======
 using ExpectedObjects;
->>>>>>> c365b4e354777279461bdc1ea8208bb096edaaef
 
 namespace UnitTestProject1
 {
@@ -44,7 +41,7 @@ namespace UnitTestProject1
         public void User_Add_Order()
         {
             //Give
-            var order = new Order(new Place("台北羽球館", "08:00", "10:00", 100, true));
+            var order = new Order(new Place(1, "台北羽球館", "08:00", "10:00", 100, true));
 
             //When
             var orderId = order.Create();
