@@ -5,7 +5,7 @@ import java.util.ArrayList;
  */
 public class OrderCollection {
    ArrayList<Order> list = new ArrayList<Order>();
-    String maxID = "1";
+    String maxID = "0";
     OrderCollection(){
 
     }
@@ -14,16 +14,18 @@ public class OrderCollection {
         return list.size();
     }
     public String getMaxID(){
-        return "";
+        return this.maxID;
     }
 
     public String nextAvailID(){
-        return "";
+        return String.valueOf(Integer.parseInt(maxID)+1);
     }
 
     public void addOrder(Order order){
-        this.list.add(order);
+
         this.maxID = String.valueOf(Integer.parseInt(maxID)+1);
+        this.list.add(order);
+       // this.list.set(Integer.parseInt(maxID)+1,order);
     }
 
 
