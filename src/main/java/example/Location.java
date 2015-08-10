@@ -15,7 +15,7 @@ public class Location {
 		locations.add("臺北巿士林運動中心");
 	}
 	
-	public static List getLocations() {
+	public static List<String> getLocations() {
 		if (locations.size() == 0){
 			initList();
 		}

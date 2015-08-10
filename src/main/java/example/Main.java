@@ -1,8 +1,12 @@
 package example;
 
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Scanner;
+
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		
 		java.util.Iterator<String> iter = Location.getLocations().iterator();
@@ -12,6 +16,34 @@ public class Main {
 			System.out.println(locationNum++ + ":" + iter.next());
 		}
 		
+		System.out.println("請輸入要預約的場地編號:");
+		Scanner scanner = new Scanner(System.in);
+		java.io.InputStream in = System.in;
+        int index;
+        index = scanner.nextInt();
+        
+        Order.getInstance().addOrder(Location.getLocations().get(index));
+        Iterator<OrderStatus> orderResult = Order.getInstance().getOrderList().iterator();
+        int count = 0;
+        while(orderResult.hasNext()){
+			System.out.println(count++ + ":" );
+			orderResult.next().printOrderInfo();
+		}
+        
+        System.out.println("請輸入要報到的場次:");
+        Thread.sleep(1000);
+        int index2 =  scanner.nextInt();
+        Thread.sleep(1000);
+        System.out.println(Order.getInstance().getOrderList().size());
+        
+        Order.getInstance().checkin(index2);
+        Order.getInstance().printOrder(index2);
+        
+        System.out.println("輸入任一按鈕，完成簽出");
+        in.read();
+        
+        Order.getInstance().checkout(index2);
+        Order.getInstance().printOrder(index2);
 	}
 
 }

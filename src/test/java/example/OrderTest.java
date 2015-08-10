@@ -22,6 +22,12 @@ public class OrderTest {
 	public void test() {
 		Order.getInstance().addOrder("臺北巿北投運動中心");
 		assertEquals(1, Order.getInstance().getOrderList().size());
+		
+		Order.getInstance().checkin(0);
+		assertEquals("報到!", Order.getInstance().getOrderStatus(0));
+		
+		Order.getInstance().checkout(0);
+		assertEquals("使用完畢!", Order.getInstance().getOrderStatus(0));
 	}
 
 }
