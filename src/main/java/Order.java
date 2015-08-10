@@ -16,12 +16,18 @@ public class Order {
         this.status = pendding;
     }
 
+
     boolean isOrder(String id){
         //if (this.id.equlas(id))
         //    return true;
         return false;
     }
 
+    boolean isPaid(){
+        if(this.status == paid)
+            return true;
+        return false;
+    }
     private void makePayment(){
         this.status = paid;
     }
