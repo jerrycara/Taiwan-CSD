@@ -2,7 +2,11 @@
 using NUnit;
 using NUnit.Framework;
 using System.Collections.Generic;
+<<<<<<< HEAD
+using System.Linq;
+=======
 using ExpectedObjects;
+>>>>>>> c365b4e354777279461bdc1ea8208bb096edaaef
 
 namespace UnitTestProject1
 {
@@ -13,13 +17,27 @@ namespace UnitTestProject1
         public void Manager_Add_PlaceInfo()
         {
             //Give
-            Place place = new Place("台北羽球館", "08:00", "10:00" , 100, true);
+            Place place = new Place(99, "台北羽球館", "08:00", "10:00" , 100, true);
             Places Places = new Places();
             //When
-            Places.place.Add(place);
+            Places.placeList.Clear();
+            Places.placeList.Add(place);
             //Then
-            Assert.AreEqual(1, Places.place.Count);
-            Assert.AreEqual(place, Places.place[0]);
+            Assert.AreEqual(1, Places.placeList.Count);
+            Assert.AreEqual(place, Places.placeList[0]);
+        }
+        [Test]
+        public void Query_PlaceInfo()
+        {
+            //Give
+            Places Places = new Places();
+
+            //When
+            Place actual = Places.Query(id: 2).FirstOrDefault();
+            Place expected = new Place(2, "新竹羽球館", "08:00", "10:00", 100, true);
+
+            //Then
+            Assert.AreSame(expected, actual);
         }
 
         [Test]
