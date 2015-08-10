@@ -33,7 +33,6 @@ public class Main {
         System.out.println("請輸入要報到的場次:");
         Thread.sleep(1000);
         int index2 =  scanner.nextInt();
-        Thread.sleep(1000);
         System.out.println(Order.getInstance().getOrderList().size());
         
         Order.getInstance().checkin(index2);
@@ -43,6 +42,31 @@ public class Main {
         in.read();
         
         Order.getInstance().checkout(index2);
+        Order.getInstance().printOrder(index2);
+        
+        System.out.print("工");
+        Thread.sleep(500);
+        System.out.print("人");
+        Thread.sleep(500);
+        System.out.print("來");
+        Thread.sleep(500);
+        System.out.print("打");
+        Thread.sleep(500);
+        System.out.print("掃");
+        Thread.sleep(500);
+        System.out.print("了");
+        Thread.sleep(500);
+        System.out.print(".");
+        Thread.sleep(500);
+        System.out.print(".");
+        Thread.sleep(500);
+        System.out.print(".");
+        Thread.sleep(500);
+        System.out.print(".");
+        Thread.sleep(500);
+        System.out.println(".");
+        
+        Order.getInstance().clean(index2);
         Order.getInstance().printOrder(index2);
 	}
 

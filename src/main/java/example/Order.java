@@ -34,6 +34,10 @@ public class Order {
 		orderList.get(i).setStatus("使用完畢!");
 	}
 	
+	public void clean(int i){
+		orderList.get(i).setStatus("場地清理完畢!");
+	}
+	
 	public String getOrderStatus(int i){
 		return orderList.get(i).getStatus();
 	}

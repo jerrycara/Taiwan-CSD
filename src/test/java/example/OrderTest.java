@@ -28,6 +28,9 @@ public class OrderTest {
 		
 		Order.getInstance().checkout(0);
 		assertEquals("使用完畢!", Order.getInstance().getOrderStatus(0));
+		
+		Order.getInstance().clean(0);
+		assertEquals("場地清理完畢!", Order.getInstance().getOrderStatus(0));
 	}
 
 }
