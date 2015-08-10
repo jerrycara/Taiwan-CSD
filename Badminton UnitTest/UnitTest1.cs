@@ -32,7 +32,7 @@ namespace UnitTestProject1
             var orderId = order.Create();
 
             //Then
-            Assert.AreEqual(order.ToExpectedObject(), Order.Get(orderId));
+            order.ToExpectedObject().ShouldEqual(Order.Get(orderId));
         }
     }
 }
