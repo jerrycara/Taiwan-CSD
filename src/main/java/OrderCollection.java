@@ -5,11 +5,14 @@ import java.util.ArrayList;
  */
 public class OrderCollection {
    ArrayList<Order> list = new ArrayList<Order>();
-    String maxID = "0";
+    String maxID = "1";
     OrderCollection(){
 
     }
 
+    public int getSize(){
+        return list.size();
+    }
     public String getMaxID(){
         return "";
     }
@@ -20,7 +23,7 @@ public class OrderCollection {
 
     public void addOrder(Order order){
         this.list.add(order);
-        //maxID = String.valueOf(Integer.parseInt(maxID)+1);
+        this.maxID = String.valueOf(Integer.parseInt(maxID)+1);
     }
 
 
