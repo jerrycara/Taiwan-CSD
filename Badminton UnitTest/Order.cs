@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace UnitTestProject1
 {
     internal class Order
     {
+        private static List<Order> orderStore = new List<Order>();
         private Place place;
 
         public Order(Place place)
@@ -11,14 +13,15 @@ namespace UnitTestProject1
             this.place = place;
         }
 
-        public object Create()
+        public int Create()
         {
-            return 1;
+            orderStore.Add(this);
+            return orderStore.Count;
         }
 
-        public static Order Get(object orderId)
+        public static Order Get(int orderId)
         {
-            return new Order(new Place("台北羽球館", "08:00", "10:00", 100, true));
+            return orderStore[orderId - 1];
         }
     }
 }
