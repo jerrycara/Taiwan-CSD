@@ -1,7 +1,8 @@
-package TennisGarden;
+
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class SearchTennisGarden {
 
@@ -27,5 +28,15 @@ public class SearchTennisGarden {
 			location += this.listGardon().get(j)+" ";
 		}
 		return location;
+	}
+	
+	public static void main(String args[]){
+		System.out.println("請從下列選取一個場地：");
+		System.out.println(new SearchTennisGarden().listGardon().toString());
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("請選取一個場地：");
+		int input=scanner.nextInt();
+		System.out.print("你選取的場地為：\n");
+		System.out.print(new SearchTennisGarden().listGardon().get(input-1));
 	}
 }
