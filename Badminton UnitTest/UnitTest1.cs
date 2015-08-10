@@ -12,7 +12,7 @@ namespace UnitTestProject1
         public void Manager_Add_PlaceInfo()
         {
             //Give
-            Place place = new Place("台北羽球館", "08:00", "10:00" , 100);
+            Place place = new Place("台北羽球館", "08:00", "10:00" , 100, true);
             Places Places = new Places();
             //When
             Places.place.Add(place);
