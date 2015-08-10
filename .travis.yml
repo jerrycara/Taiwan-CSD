@@ -1,4 +1,9 @@
 language: csharp
 solution: solution-name.sln
-
+install:
+  - nuget restore solution-name.sln
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Debug solution-name.sln
+  - mono ./testrunner/NUnit.Runners.*/tools/nunit-console.exe ./MyPoject.Tests/bin/Debug/MyProject.Tests.dll
 
