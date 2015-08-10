@@ -10,6 +10,7 @@ public class SearchTests {
 	@Test
 	public void given_SearchTennisGarden_when_Have_then_Return_TennisGarden(){
 		assertEquals("Taipei","Taipei");
+		assertEquals(10, new SearchTennisGarden().listGardon().size());
 	}
 	
 }
