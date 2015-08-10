@@ -34,7 +34,7 @@ namespace UnitTestProject1
             Place expected = new Place(2, "新竹羽球館", "08:00", "10:00", 100, true);
 
             //Then
-            Assert.AreSame(expected, actual);
+            expected.ToExpectedObject().ShouldEqual(actual);
         }
 
         [Test]
